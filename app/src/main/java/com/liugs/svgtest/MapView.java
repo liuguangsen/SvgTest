@@ -168,8 +168,11 @@ public class MapView extends View {
                 calculationScale();
                 Log.i(TAG,"parser path over.");
                 mapItemList = itemList;
-                // 开始绘制所有的path
-                postInvalidate();
+                // 开始绘制所有的path 或者 主动调用一下测量
+                // requestLayout();
+                // measure(MeasureSpec.EXACTLY,MeasureSpec.EXACTLY);
+
+                // postInvalidate();
             } catch (Exception e){
                 Log.e(TAG,"parser path error. " + e.getMessage());
             }
